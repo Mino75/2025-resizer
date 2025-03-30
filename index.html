@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Resizer</title>
+  <link rel="manifest" href="manifest.json" />
+  <!-- styles.js will inject CSS -->
+  <script src="styles.js"></script>
+  <!-- Load the local jsPDF library (ensure jspdf.min.js is in your project folder) -->
+  <script src="jspdf.min.js"></script>
+</head>
+<body>
+  <h2>Image Resizer</h2>
+  <!-- Accept only common image file types -->
+  <input type="file" id="upload" accept=".jpg,.jpeg,.png,.webp,.gif,.bmp,.svg">
+  <br><br>
+  <label>Preset Dimensions:
+    <select id="presetDimensions">
+      <option value="">-- Select Preset --</option>
+      <option value="48,48">48 x 48</option>
+      <option value="192,192">192 x 192</option>
+      <option value="512,512">512 x 512</option>
+      <option value="320,569">320 x 569</option>
+      <option value="854,480">854 x 480</option>
+      <option value="1366,768">1366 x 768</option>
+      <option value="1920,1080">1920 x 1080</option>
+    </select>
+  </label>
+  <br><br>
+  <div class="dimensions">
+    <label>Width: <input type="number" id="width" placeholder="Width (max 2000)"></label>
+    <label>Height: <input type="number" id="height" placeholder="Height (max 2000)"></label>
+  </div>
+  <br>
+  <!-- Display original image dimensions and ratio -->
+  <div id="originalInfo"></div>
+  <br>
+  <label>
+    Output Type:
+    <select id="outputType">
+      <option value="image/png">PNG</option>
+      <option value="image/jpeg">JPG</option>
+      <option value="image/webp">WEBP</option>
+      <option value="pdf">PDF</option>
+    </select>
+  </label>
+  <br><br>
+  <button id="processBtn">Process</button>
+  <br><br>
+  <!-- Preview container with crop overlay -->
+  <div id="previewContainer">
+    <img id="preview" alt="Preview">
+    <div id="cropBox"></div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "name": "resizer",
+    "version": "1.0.0",
+    "description": "Image Resizer",
+    "main": "server.js",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
