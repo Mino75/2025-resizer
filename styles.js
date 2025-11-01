@@ -1,7 +1,13 @@
 (function() {
+    
+    // Define preset background colors and pick one randomly
+    const backgroundOptions = ['#FF8F00', '#D32F2F', '#388E3C', '#1976D2', '#7B1FA2'];
+    const selectedBackground = backgroundOptions[Math.floor(Math.random() * backgroundOptions.length)];
+
+    
     const css = `
       body {
-        background-color: #013220; /* dark green background */
+        background-color: ${selectedBackground}; /* dark green background */
         color: #fff;
         font-family: Arial, sans-serif;
         margin: 20px;
